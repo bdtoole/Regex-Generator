@@ -58,7 +58,7 @@ Function Build-Regex
         Else
         {
             $numOccurrences = 1
-            $repetitionList.Add(0)
+            $repetitionList.Add(1)
         }
     }
 
@@ -73,7 +73,7 @@ Function Build-Regex
 
     ForEach ($i in ($consolidatedRegexList.Count-1))
     {
-        If ($repetitionList[$i] -gt 0) { $regexList[$i] += "{1,$($repetitionList[$i]))}" }
+        If ($repetitionList[$i] -gt 1) { $regexList[$i] += "{1,$($repetitionList[$i]))}" }
     }
 
     Write-Host ([string]::Join("",$regexList))
