@@ -78,7 +78,7 @@ Function Build-Regex
     # Compare final regular expression list to array containing the number of occurrences and append the quantifier when necessary
     ForEach ($i in ($consolidatedRegexList.Count-1))
     {
-        If ($repetitionList[$i] -gt 1) { $regexList[$i] += "{1,$($repetitionList[$i]))}" }
+        If ($repetitionList[$i] -gt 1) { $regexList[$i] += "{1,$($repetitionList[$i])}" }
     }
 
     # Output regular expression array as a character string
